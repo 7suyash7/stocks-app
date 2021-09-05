@@ -9,9 +9,18 @@ function submitHandler () {
     var qty = Number(stocksQuantity.value);
     var curr = Number(currentPrice.value);
 
-    calculateProfitAndLoss (ip, qty, curr);
+    if(ip === 0 | qty === 0 | curr === 0) {
+        showOutput("Enter all the inputs");
+      } else if(ip < 0 | qty < 0 | curr < 0) {
+        showOutput("All values should be positive");
+      } else {
+        calculateProfitAndLoss(ip, qty, curr);
+      }
+    }
 
-}
+    
+
+
 
 
 
